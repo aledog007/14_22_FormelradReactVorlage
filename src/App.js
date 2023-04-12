@@ -5,7 +5,7 @@ import Formelrad from "./formelrad/Formelrad";
 function App() {
   return (
     <div className="App">
-    <Formelrad/>
+      <Formelrad/>
     </div>
   );
 }
