@@ -19,10 +19,14 @@ export default function Formelrad() {
         message: "red"
     })
 
+   function resetColors(){
+       setColors( colors=> ({...colors, u:"black", i:"black", r:"black", p:"black"}));
+   }
+
     const handleCalculation = (event) => {
         event.preventDefault();
         console.log("handleCalculation");
-
+        resetColors();
         // Cases where voltage (u) is missing
         if (values.u === "" && values.i === "") {
             /*calculate u and i */
