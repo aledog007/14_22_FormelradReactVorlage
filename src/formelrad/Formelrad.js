@@ -14,6 +14,11 @@ export default function Formelrad() {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log("handleSubmit")
+        if (values.u === "" && values.i === "") {
+            /*calculate u and i */
+            setValues(values => ({...values, u: Math.sqrt(values.p * values.r)}));
+            setValues(values => ({...values, i: Math.sqrt(values.p / values.r)}));
+        }
     }
 
     return (
