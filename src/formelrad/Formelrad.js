@@ -22,7 +22,10 @@ export default function Formelrad() {
             /*calculate i and p */
             setValues(values => ({...values, i: values.u / values.r}));
             setValues(values => ({...values, p: values.u * values.u / values.r}));
-            setColors( colors=> ({...colors, i:"red", p:"red"}));
+        } else {
+            /*calculate r and p */
+            setValues(values => ({...values, r: values.u / values.i}));
+            setValues(values => ({...values, p: values.u * values.i}));
         }
     }
 
