@@ -28,30 +28,36 @@ export default function Formelrad() {
             /*calculate u and i */
             setValues(values => ({...values, u: Math.sqrt(values.p * values.r)}));
             setValues(values => ({...values, i: Math.sqrt(values.p / values.r)}));
+            setColors( colors=> ({...colors, u:"red", i:"red"}));
         } else if (values.u === "" && values.r === "") {
             /*calculate u and r */
             setValues(values => ({...values, u: values.p / values.i}));
             setValues(values => ({...values, r: values.p / values.i / values.i}));
+            setColors( colors=> ({...colors, u:"red", r:"red"}));
         } else if (values.u === "" && values.p === "") {
             /*calculate u and p */
             setValues(values => ({...values, u: values.i * values.r}));
             setValues(values => ({...values, p: values.i * values.i * values.r}));
+            setColors( colors=> ({...colors, u:"red", p:"red"}));
         }
         // Cases where current (i) is missing
         else if (values.i === "" && values.r === "") {
             /*calculate i and r */
             setValues(values => ({...values, i: values.p / values.u}));
             setValues(values => ({...values, r: values.u * values.u / values.p}));
+            setColors( colors=> ({...colors, i:"red", r:"red"}));
         } else if (values.i === "" && values.p === "") {
             /*calculate i and p */
             setValues(values => ({...values, i: values.u / values.r}));
             setValues(values => ({...values, p: values.u * values.u / values.r}));
+            setColors( colors=> ({...colors, i:"red", p:"red"}));
         }
         // Default case: calculate r and p
         else {
             /*calculate r and p */
             setValues(values => ({...values, r: values.u / values.i}));
             setValues(values => ({...values, p: values.u * values.i}));
+            setColors( colors=> ({...colors, r:"red", p:"red"}));
         }
     }
 
