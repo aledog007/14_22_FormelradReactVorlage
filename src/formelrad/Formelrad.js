@@ -86,6 +86,7 @@ export default function Formelrad() {
                 <header>
                     <h2>Formelrad</h2>
                     <img src={formelrad} width="200" alt="Formelrad"/>
+                     <p>Zwei Werte eingeben, die anderen werden berechnet.</p>
                 </header>
                 <form onSubmit={handleCalculation}>
                     <InputField color={colors.u} value={values.u} label="Spannung" handleChange={e => {setValues(values => ({...values, u: e.target.value}))}} />
@@ -94,7 +95,7 @@ export default function Formelrad() {
                     <InputField color={colors.p} value={values.p} label="Leistung" handleChange={e => {setValues(values => ({...values, p: e.target.value}))}} />
                     <button type="submit">Calculate</button>
                     <button style={{margin:10}} onClick={handleClear}>Clear</button>
-                    <p>{values.message}</p>
+                    <p style={{ color: colors.message }}>{values.message}</p>
                 </form>
             </section>
         </>
